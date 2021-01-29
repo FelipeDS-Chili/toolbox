@@ -10,5 +10,5 @@ yapf
 python-gitlab
 twine
 Flask
-Flas-Cors
+Flask-Cors
 flask
