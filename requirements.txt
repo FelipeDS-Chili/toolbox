@@ -12,3 +12,4 @@ twine
 Flask
 Flask-Cors
 flask
+gunicorn
