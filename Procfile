@@ -1,1 +1,1 @@
-web: pip install . -U && toolbox-run
+web: gunicorn app:app
