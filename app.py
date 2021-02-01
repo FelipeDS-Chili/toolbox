@@ -1,4 +1,4 @@
-from flask import Flask, escape, request, render_template
+from flask import Flask, escape, request, render_template,jsonify
 from bs4 import BeautifulSoup
 import pandas as pandas
 import requests
@@ -12,7 +12,7 @@ def home():
    return render_template('home.html')
 
 @app.route('/buscar_episodios', methods = ['GET'])
-def get_api(name):
+def get_api():
 
     name = request.args.get('name')
 
@@ -25,7 +25,7 @@ def get_api(name):
 
     season = 0
 
-    epis = {}
+    epis = { 'Mensaje : ': 'Aqui esta el listado de los episodios' }
 
     for i in range(len(anime)):
 
@@ -62,12 +62,13 @@ def get_api(name):
 
                       #  print (impresion.format(nombre_parte))
 
+    return jsonify(epis)
     #return json.dumps(epis, indent = 4)
-    return epis
+    #return epis
 
 #anime[1].find_all('episode')[0].find_all('title')
 
 if __name__ == '__main__':
     app.run(host = '127.0.0.1', port =5000, debug=True)
 
-    #print(get_api('Attack on Titan'))
+    #print(get_api('naruto'))
