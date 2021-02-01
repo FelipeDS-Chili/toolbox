@@ -10,8 +10,3 @@ title = st.text_input('Nombre del Anime', 'naruto')
 
 st.write(get_episodes(title))
 
-
-st.write('bienvenido')
-
-st.sidebar.markdown('Consulta aqui tu wea')
-
