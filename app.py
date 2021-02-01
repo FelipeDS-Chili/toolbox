@@ -62,10 +62,8 @@ def get_api(name):
 
                       #  print (impresion.format(nombre_parte))
 
-
-
-    return json.dumps(epis, indent = 4)
-    #return epis
+    #return json.dumps(epis, indent = 4)
+    return epis
 
 #anime[1].find_all('episode')[0].find_all('title')
 
