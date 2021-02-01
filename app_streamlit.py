@@ -1,3 +1,4 @@
+
 from toolbox.operations import get_data, get_episodes
 import streamlit as st
 from bs4 import BeautifulSoup
@@ -5,8 +6,12 @@ import pandas as pandas
 import requests
 import json
 
-
 title = st.text_input('Nombre del Anime', 'naruto')
 
 st.write(get_episodes(title))
+
+
+st.write('bienvenido')
+
+st.sidebar.markdown('Consulta aqui tu wea')
 
