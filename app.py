@@ -1,4 +1,4 @@
-from flask import Flask, escape, request, render_template, jsonify
+from flask import Flask, escape, request, render_template
 from bs4 import BeautifulSoup
 import pandas as pandas
 import requests
