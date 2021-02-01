@@ -14,3 +14,4 @@ Flask-Cors
 flask
 gunicorn
 bs4
+streamlit==0.64.0
