@@ -62,7 +62,7 @@ def get_api():
 
                       #  print (impresion.format(nombre_parte))
 
-    return jsonify(epis)
+    return pd.DataFrame(jsonify(epis))
     #return json.dumps(epis, indent = 4)
     #return epis
 
