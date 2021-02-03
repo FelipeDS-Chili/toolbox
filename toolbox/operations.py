@@ -11,7 +11,7 @@ def get_data():
     #Cambiar Junio por 20 en vez de 2020 file
     for mes in meses:
         archivos[f'{mes}'] = pd.read_csv(f'/Users/felipeinostroza/desktop/drive-download-20210124T195157Z-001/CSV/Conta_{mes}_20.csv'\
-                                         , sep=';')
+                                         , sep=';', low_memory = False)
 
     #Eliminando whitespaces en las columnas
     for mes in meses:
@@ -51,6 +51,13 @@ def get_data():
     for columna in columnas:
         data_full[columna] = data_full[columna].fillna('0')
         data_full[columna] = data_full[columna].astype(str).str.strip().replace('-','0').str.replace('.','').astype(int)
+
+    columnas = ['COMPROBANTE', 'CODPLAN', 'DEBE', 'HABER' ]
+    for columna in columnas:
+        data_full[columna] = data_full[columna].astype('int32')
+
+    data_full['MES'] = data_full['MES'].astype('int8')
+
 
     return data_full
 

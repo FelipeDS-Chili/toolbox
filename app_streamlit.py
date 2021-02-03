@@ -6,7 +6,9 @@ import pandas as pandas
 import requests
 import json
 
-title = st.text_input('Nombre del Anime', 'naruto')
+#title = st.text_input('Nombre del Anime', 'naruto')
 
-st.write(get_episodes(title))
+st.table(get_data().head())
+
+
 
