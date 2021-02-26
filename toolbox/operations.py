@@ -2,6 +2,8 @@ import numpy as np
 import pandas as pd
 import requests
 from bs4 import BeautifulSoup
+import os
+
 
 
 def get_data():
@@ -10,8 +12,11 @@ def get_data():
     archivos = {}
     #Cambiar Junio por 20 en vez de 2020 file
     for mes in meses:
-        archivos[f'{mes}'] = pd.read_csv(f'/Users/felipeinostroza/desktop/drive-download-20210124T195157Z-001/CSV/Conta_{mes}_20.csv'\
+        archivos[f'{mes}'] = pd.read_csv(os.path.join('Users',"felipeinostroza","desktop", "drive-download-20210124T195157Z-001", "CSV", f"Conta_{mes}_20.csv" )\
                                          , sep=';', low_memory = False)
+
+        #archivos[f'{mes}'] = pd.read_csv(f'/Users/felipeinostroza/desktop/drive-download-20210124T195157Z-001/CSV/Conta_{mes}_20.csv'\
+        #                                 , sep=';', low_memory = False)
 
     #Eliminando whitespaces en las columnas
     for mes in meses:
